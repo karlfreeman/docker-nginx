@@ -4,8 +4,9 @@ server {
 
   server_name localhost;
 
-  location ~* \.(js|css|png|jpg|jpeg|gif|ico)$ {
-    expires 1d;
+  location ~ ^/(assets)/  {
+    expires max;
+    add_header Cache-Control public;
   }
 
   location / {
